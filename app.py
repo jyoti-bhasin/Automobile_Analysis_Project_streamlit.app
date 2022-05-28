@@ -499,8 +499,8 @@ if a1 == 'Explore':
         st.subheader("Price - " + str(car_price.values[0]))
         
 if a1 == 'About':
-    st.markdown(f"<h1 style='background-color:#00FFFF;'> ABOUT </h1>", unsafe_allow_html=True)
-    st.markdown(f"<h2 style='background-color:#FF0000;'> Data Analysis : </h2>", unsafe_allow_html=True)
+    st.markdown(f"<h1 style='background-color:#F08080;'> ABOUT </h1>", unsafe_allow_html=True)
+    st.markdown(f"<h3 style='background-color:#1974D2;'> Data Analysis : </h3>", unsafe_allow_html=True)
     st.write(
         "Data Analysis is the process of systematically applying statistical and/or logical techniques to describe and illustrate, condense and recap, and evaluate data.")
     st.markdown(f"<h3 style='background-color:#1974D2;'> Visual Representation : </h3>", unsafe_allow_html=True)
