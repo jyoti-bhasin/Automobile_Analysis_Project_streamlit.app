@@ -499,26 +499,26 @@ if a1 == 'Explore':
         st.subheader("Price - " + str(car_price.values[0]))
         
 if a1 == 'About':
-    st.title("About")
-    st.subheader("Data Analysis :")
+    st.markdown(f"<h1 style='background-color:#00FFFF;'> ABOUT </h1>", unsafe_allow_html=True)
+    st.markdown(f"<h2 style='background-color:#FF0000;'> Data Analysis : </h2>", unsafe_allow_html=True)
     st.write(
         "Data Analysis is the process of systematically applying statistical and/or logical techniques to describe and illustrate, condense and recap, and evaluate data.")
-    st.subheader("Visual Representation :")
+    st.markdown(f"<h3 style='background-color:#1974D2;'> Visual Representation : </h3>", unsafe_allow_html=True)
     st.write(
         "You can visually represent the different features of cars such as engine size, length, width, horsepower, etc in the form of various charts and graphs such as bar, line, area, scatter, pie chart etc")
-    st.subheader("Dependency & Analysis :")
+    st.markdown(f"<h3 style='background-color:#1974D2;'> Dependency & Analysis : </h3>", unsafe_allow_html=True)
     st.write(
         "You can check out the dependency and variation of one feature of an automobile with other features, in the form of line and area graph.")
-    st.subheader("Price Prediction :")
+    st.markdown(f"<h3 style='background-color:#1974D2;'> Price Prediction : </h3>", unsafe_allow_html=True)
     st.write(
         "You can predict the price of a car by inputting several parameters such as width, horsepower, engine size etc.")
-    st.subheader("Resolve Queries :")
+    st.markdown(f"<h3 style='background-color:#1974D2;'> Resolve Queries : </h3>", unsafe_allow_html=True)
     st.write(
         "You can resolve various queries such as find the cars with specific value of features, highest/lowest values of the features, and view grouping and segmentation of features.")
-    st.subheader("Automobile News :")
+    st.markdown(f"<h3 style='background-color:#1974D2;'> Automobile News : </h3>", unsafe_allow_html=True)
     st.write(
         "News extracted using the NewsAPI.You can search a keyword related to automobiles and get get access to news related to it. ")
-    st.subheader("Web Scraping :")
+    st.markdown(f"<h3 style='background-color:#1974D2;'> Web Scraping : </h3>", unsafe_allow_html=True)
     st.write(
         "You can access and analyse data such as car name, mileage, rating, price etc , from an online car website, by scraping data from web.")
 
