@@ -21,6 +21,7 @@ from getting_news import get_news
 
 #for web scraping
 import web_scrap
+from web_scrap import get_web
 
 import pickle
 import pickle_mixin
@@ -463,6 +464,8 @@ if a1 == 'Explore':
 
 
     elif b1 == 'Web Scraping':
+        
+        get_web()
 
         st.markdown(f"<h1 style='background-color:#F3F781;'> Web Scraping </h1>",
                     unsafe_allow_html=True)
