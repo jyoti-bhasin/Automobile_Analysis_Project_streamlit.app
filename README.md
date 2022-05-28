@@ -9,6 +9,17 @@ Machine Learning algorithms such as Linear Regression and SVM Regression.
 Framework for deployment - Streamlit.
 Hosted on - Streamlit share.
 
+Working of the app :
+First of all,import all the required modules and libraries of python.
+Then, the csv file is loaded to obtain dataset.
+Since our file does not have a lot of null values, or severe issues, we will just replace extra space by null values in the dataset, and it will be ready to use.
+The basic design and menu options are created.
+Next, in the visual representation option, a select menu is created for selecting features of cars, and to choose types of graphs. The different types of graphs such as bar, line, area, scatter, pie, donut chart are visualised using the plost library of streamlit.
+For the Dependency and analysis, similar menu , along with few conditions are applied, and feature to select type of graph is created. Again, plost library of streamlit is used for visualization.
+For the Price prediction feature, two models of Machine learning- Linear Regression and SVM Regression are made, and their pickle files are used in the app, for the prediction of price of cars, by taking input of features of the car.
+
+
+
 Features :
 1. Visual Representation :
 You can visually represent the different features of cars such as engine size, length, width, horsepower, etc in the form of various charts and graphs such as bar, line, area, scatter, pie, donut chart. The charts and graphs are interactive; you can choose or select one or more features, and also the type of graphs.
