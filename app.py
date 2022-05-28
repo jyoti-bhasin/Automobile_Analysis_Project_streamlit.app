@@ -366,13 +366,13 @@ if a1 == 'Explore':
             st.subheader("Rs. " + str(np.round(price_pred[0], 2)))
 
     elif b1 == 'Automobile News':
-        st.markdown(f"<h1 style='background-color:#A9BCF5;'> 📰 Automobile News </h1>",
+        st.markdown(f"<h1 style='background-color:#A9BCF5;'> Automobile News </h1>",
                     unsafe_allow_html=True)
 
         get_news()
 
     elif b1 == 'Resolve Queries':
-        st.markdown(f"<h1 style='background-color:#A9BCF5;'> 🔎 Resolve Queries</h1>",
+        st.markdown(f"<h1 style='background-color:#A9BCF5;'> Resolve Queries</h1>",
                     unsafe_allow_html=True)
 
         selected_query = st.selectbox("Your query is related to",('Find cars with an input value of a feature',
@@ -436,7 +436,7 @@ if a1 == 'Explore':
 
         if selected_query == 'Segmentation & Grouping':
             feature_for_segment = st.selectbox(
-                "👉 Select the first feature to show grouping and segmentation: ", options_to_choose,
+                " Select the first feature to show grouping and segmentation: ", options_to_choose,
                 key=1)
             Dict = {'symboling': 1, 'normalized_losses': 2, 'wheel_base': 10, 'length': 11, 'width': 12, 'height': 13,
                     'curb_weight': 14, 'engine_size': 17, 'horsepower': 22, 'peak_rpm': 23, 'bore': 19, 'stroke': 20,
@@ -446,7 +446,7 @@ if a1 == 'Explore':
             selected_segment = Dict[feature_for_segment]
             res = list((Counter(options_to_choose) - Counter([feature_for_segment])).elements())
             feature_for_segment2 = st.selectbox(
-                "👉 Select the second feature to show grouping and segmentation: ", res,
+                " Select the second feature to show grouping and segmentation: ", res,
                 key=2)
             Dict2 = {'symboling': 1, 'normalized_losses': 2, 'wheel_base': 10, 'length': 11, 'width': 12, 'height': 13,
                      'curb_weight': 14, 'engine_size': 17, 'horsepower': 22, 'peak_rpm': 23, 'bore': 19, 'stroke': 20,
@@ -454,7 +454,7 @@ if a1 == 'Explore':
                      'city_mpg': 24, 'highway_mpg': 25, 'num_doors': 28, 'num_cylinders': 29, 'engine_size_cc': 30,
                      'power2weight_ratio': 31}
             selected_segment2 = Dict[feature_for_segment2]
-            if st.button("📊 Get representation for these features "):
+            if st.button("Get representation for these features "):
                 st.write(
                     "The customer segmentation graph given below shows the most popular " + feature_for_segment + " and " + feature_for_segment2 + " combination which are preferred by people.")
                 get_customer_seg(dt, selected_segment, selected_segment2)
@@ -497,6 +497,32 @@ if a1 == 'Explore':
         star_rating = ":star:" * int(round(average_rating, 0))
         st.subheader(star_rating)
         st.subheader("Price - " + str(car_price.values[0]))
+        
+if a1 == 'About':
+    st.title("About")
+    st.subheader("Data Analysis :")
+    st.write(
+        "Data Analysis is the process of systematically applying statistical and/or logical techniques to describe and illustrate, condense and recap, and evaluate data.")
+    st.subheader("Visual Representation :")
+    st.write(
+        "You can visually represent the different features of cars such as engine size, length, width, horsepower, etc in the form of various charts and graphs such as bar, line, area, scatter, pie chart etc")
+    st.subheader("Dependency & Analysis :")
+    st.write(
+        "You can check out the dependency and variation of one feature of an automobile with other features, in the form of line and area graph.")
+    st.subheader("Price Prediction :")
+    st.write(
+        "You can predict the price of a car by inputting several parameters such as width, horsepower, engine size etc.")
+    st.subheader("Resolve Queries :")
+    st.write(
+        "You can resolve various queries such as find the cars with specific value of features, highest/lowest values of the features, and view grouping and segmentation of features.")
+    st.subheader("Automobile News :")
+    st.write(
+        "News extracted using the NewsAPI.You can search a keyword related to automobiles and get get access to news related to it. ")
+    st.subheader("Web Scraping :")
+    st.write(
+        "You can access and analyse data such as car name, mileage, rating, price etc , from an online car website, by scraping data from web.")
+
+
 
 
 
