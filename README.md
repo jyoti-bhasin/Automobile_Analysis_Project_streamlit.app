@@ -29,4 +29,4 @@ find and view grouping and segmentation of two features ie to show best combinat
 News extracted using the NewsAPI can be shown here.You can search a keyword related to automobiles and get access to news related to it.
 
 6. Web Scraping :
-You can access and analyse data such as car name, mileage, rating, price etc , from an online car website, by scraping data from web.
+You can access and analyse data such as car name, mileage, rating, price etc , from an online car website, by scraping data from web. Also, you can view the graph of rating of various cars, and get details of a specific car model.
