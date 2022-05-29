@@ -1,15 +1,21 @@
 # Automobile Data Analysis :
 
-Data Analysis is the process of systematically applying statistical and/or logical techniques to describe and illustrate, condense and recap, and evaluate data.
+## Data Analysis
+It is the process of systematically applying statistical and/or logical techniques to describe and illustrate, condense and recap, and evaluate data.
 
-Technologies used :
-Language - Python.
-Python libraries - api, beautifulsoup4, matplotlib, numpy, pandas, pickle_mixin, plotly, requests, scikit_learn, seaborn.
-Machine Learning algorithms such as Linear Regression and SVM Regression.
-Framework for deployment - Streamlit.
-Hosted on - Streamlit share.
+## Technologies used :
+### Language 
+Python.
+### Python libraries 
+api, beautifulsoup4, matplotlib, numpy, pandas, pickle_mixin, plotly, requests, scikit_learn, seaborn.
+### Algorithms 
+Machine Learning Algorithms such as Linear Regression and SVM Regression.
+### Framework for deployment
+Streamlit.
+### Hosted on 
+Streamlit share.
 
-Working of the app :
+## Working of the app :
 First of all,import all the required modules and libraries of python.
 Then, the csv file is loaded to obtain dataset.
 Since our file does not have a lot of null values, or severe issues, we will just replace extra space by null values in the dataset, and it will be ready to use.
