@@ -1,7 +1,7 @@
 # Automobile Data Analysis :
 
 ## Data Analysis
-- It is the process of systematically applying statistical and/or logical techniques to describe and illustrate, condense and recap, and evaluate data.
+- It is the process of systematically applying statistical and/or logical techniques such as cleaning, transforming, and modeling data to discover useful information for business decision-making. 
 
 ## Dataset used 
 [https://github.com/jyoti-bhasin/Automobile_Analysis_Project_streamlit.app/blob/main/Book2.csv
