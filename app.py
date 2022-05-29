@@ -1,7 +1,10 @@
 import numpy
-
 from collections import Counter
+
+#for navigation menu
 import nav_bar
+from nav_bar import navigation_options
+
 # for mathematical computation
 import streamlit as st
 import numpy as np
@@ -23,8 +26,13 @@ from getting_news import get_news
 import web_scrap
 from web_scrap import get_web
 
+#for ML models 
 import pickle
 import pickle_mixin
+
+#for customer segment commands
+import customer_seg
+from customer_seg import get_customer_seg
 
 # for data visualization
 
@@ -33,8 +41,7 @@ import matplotlib.pyplot as plt
 import plotly
 import plotly.express as px
 from matplotlib.pyplot import figure
-
-#testing login
+import plost
 
 hide_menu_style = """
         <style>
@@ -44,26 +51,17 @@ hide_menu_style = """
         """
 st.markdown(hide_menu_style,unsafe_allow_html=True)
 
-
+#importing dataset from csv file, and cleaning it
 dt = pd.read_csv("Book2.csv")
 pd.set_option('display.max_rows', None)
 print(dt.head())
-# print(dt[dt.isnull()].count())
-# print(dt[dt.duplicated()].count())
+print(dt[dt.isnull()].count())
+print(dt[dt.duplicated()].count())
 dt = dt.replace(' ', '')
 
-#customer segment commands
-import customer_seg
-from customer_seg import get_customer_seg
-
 print(type(dt))
-import plost
-
-
-from nav_bar import navigation_options
 
 a1 = navigation_options()
-
 
 if a1 == 'Home':
     st.markdown(f"<h1 style='background-color:#F6CEEC;'>AUTOMOBILE DATA ANALYSIS </h1>", unsafe_allow_html=True)
@@ -141,7 +139,6 @@ if a1 == 'Explore':
                     x='make',
                     y=selected_option2,
                     height=500,
-                    # 👈 This is magic!
                 )
 
             if type_of_graph == 'Area Graph':
@@ -184,7 +181,6 @@ if a1 == 'Explore':
                     x='make',
                     y=selected_option2,
                     height=500,
-                    # 👈 This is magic!
                 )
 
             if type_of_graph == 'Area Graph':
@@ -245,7 +241,6 @@ if a1 == 'Explore':
                     x='make',
                     y=selected_option2,
                     height=500,
-                    # 👈 This is magic!
                 )
 
             if type_of_graph == 'Area Graph':
@@ -293,7 +288,6 @@ if a1 == 'Explore':
                     x=x_axis_dependent,
                     y=y_axis_dependent,
                     height=500,
-                    # 👈 This is magic!
                 )
 
             if type_of_graph2 == 'Area Chart':
@@ -316,10 +310,8 @@ if a1 == 'Explore':
         options_to_choose2 = ['width', 'bore', 'stroke', 'horsepower', 'num_doors', 'num_cylinders',
                               'engine_size_cc', 'power2weight_ratio']
         get_linear_prediction(dt, options_to_choose2)
-        # get_rf_prediction(dt, options_to_choose2)
         get_svm_prediction(dt, options_to_choose2)
         model = pickle.load(open('model.sav', 'rb'))
-        # model2 = pickle.load(open('model2.sav', 'rb'))
         model3 = pickle.load(open('model3.sav', 'rb'))
 
 
@@ -521,11 +513,3 @@ if a1 == 'About':
     st.markdown(f"<h3 style='background-color:#1974D2;'> Web Scraping : </h3>", unsafe_allow_html=True)
     st.write(
         "You can access and analyse data such as car name, mileage, rating, price etc , from an online car website, by scraping data from web.")
-
-
-
-
-
-
-
-
