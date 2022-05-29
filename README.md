@@ -5,11 +5,14 @@ It is the process of systematically applying statistical and/or logical techniqu
 
 ## Technologies used :
 ### Language 
-Python.
+Python- for programming and writing logic.
+CSS - for adding some UI/UX.
 ### Python libraries 
 api, beautifulsoup4, matplotlib, numpy, pandas, pickle_mixin, plotly, requests, scikit_learn, seaborn.
 ### Algorithms 
 Machine Learning Algorithms such as Linear Regression and SVM Regression.
+### APIs
+NewsAPI
 ### Framework for deployment
 Streamlit.
 ### Hosted on 
@@ -22,17 +25,17 @@ Then, the csv file is loaded to obtain dataset.
 Since our file does not have a lot of null values, or severe issues, we will just replace extra space by null values in the dataset, and it will be ready to use.
 The basic design and menu options are created.
 
-### 1 feature
+### 1- feature
 Next, in the visual representation option, a select menu is created for selecting features of cars, and to choose types of graphs. The different types of graphs such as bar, line, area, scatter, pie, donut chart are visualised using the plost library of streamlit.
-### 2 feature
+### 2- feature
 For the Dependency and analysis, similar menu , along with few conditions are applied, and feature to select type of graph is created. Again, plost library of streamlit is used for visualization.
-### 3 feature
+### 3- feature
 For the Price prediction feature, two models of Machine learning- Linear Regression and SVM Regression are made, and their pickle files are used in the app, for the prediction of price of cars, by taking input of features of the car.
-### 4 feature 
+### 4- feature 
 For the Automobile News generation, the news is shown on the app using the NewsAPI. It is extracted in a JSON format, hence converted to the readable text and all the details such as news headline, author, source, description, etc are displayed on the web page.
-### 5 feature
+### 5- feature
 Next, for the resolve queries section, three queries related to automobiles are chosen and a selection menu is created, to allow the user to choose a query to resolve. Specific logic is written, utilizing the dataset to solve these queries to display the maximum or minimum values of a car feature, etc. For the 'Grouping and Segmentation' query, K-Clustering Algorithm to form different groups which could depict best combinations of two features which most of the automobiles uses. A scatter graph is displayed to view these groups and segmentation.
-### 6 feature
+### 6- feature
 For adding the functionality of last feature, web scraping, we will use the bs4 and BeautifulSoup library of Python. The data from a cars website is extracted, and all important details such as mileage, dealer name, rating, review count and price of few cars is stored in an excel sheet. Now, data from this file is displayed on the app, along with a graph between rating and name of car. Besides, a selection menu is created for the user to choose a car, and the details related to that specific car will be displayed.
 
 ## Functionality & features :
