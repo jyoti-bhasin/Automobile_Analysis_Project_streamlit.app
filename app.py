@@ -1,3 +1,4 @@
+#importing all required dependencies
 import numpy
 from collections import Counter
 
@@ -35,7 +36,6 @@ import customer_seg
 from customer_seg import get_customer_seg
 
 # for data visualization
-
 import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly
@@ -43,6 +43,7 @@ import plotly.express as px
 from matplotlib.pyplot import figure
 import plost
 
+#setting up streamlit to hide footer
 hide_menu_style = """
         <style>
         #MainMenu {visibility: hidden; }
@@ -61,6 +62,7 @@ dt = dt.replace(' ', '')
 
 print(type(dt))
 
+#displaying the navigation menu
 a1 = navigation_options()
 
 if a1 == 'Home':
@@ -95,15 +97,15 @@ if a1 == 'Explore':
 
     st.sidebar.title("Lets do some Representation and Analysis !")
     st.sidebar.image("download.png", width=100)
-
+        
+    #creating buttons in the sidebar to choose options
     b1 = st.sidebar.radio("select option :",('Visual Representation','Dependency & Analysis','Price Prediction','Automobile News','Resolve Queries','Web Scraping'))
-
     options_to_choose = ['symboling','normalized_losses','wheel_base','engine_size', 'length', 'width','height','curb_weight', 'bore', 'stroke', 'compression_ratio', 'horsepower', 'peak_rpm',
                          'city_mpg', 'highway_mpg', 'num_doors', 'num_cylinders', 'engine_size_cc',
                          'power2weight_ratio']
     size_of_options = len(options_to_choose)
-
-
+        
+    #1st feature - Visual Representation
     if b1 == 'Visual Representation':
         st.markdown(f"<h1 style='background-color:#F3F781;'> Visual Representation & Analysis </h1>", unsafe_allow_html=True)
         #st.title("Visual Representation & Analysis")
@@ -123,8 +125,7 @@ if a1 == 'Explore':
         elif size_of_selected_option == size_of_options:
             type_of_graph = st.radio('Choose the type of graph to display : ', graphs_to_choose)
 
-            if type_of_graph == 'Pie Chart':  # need to be handled
-
+            if type_of_graph == 'Pie Chart':  # need to be handled because it can display one feature only
                 st.warning("Please select only one parameter of feature to view this chart.")
 
             if type_of_graph == 'Donut Chart':
@@ -132,6 +133,8 @@ if a1 == 'Explore':
 
             if type_of_graph == 'Scatter Chart':
                 st.warning("Please select only one parameter of feature to view this chart.")
+                
+            #displaying graphs 
 
             if type_of_graph == 'Line Graph':
                 plost.line_chart(
@@ -165,8 +168,7 @@ if a1 == 'Explore':
         elif size_of_selected_option < size_of_options and size_of_selected_option != 1:
             type_of_graph = st.radio('Choose the type of graph to display : ', graphs_to_choose)
 
-            if type_of_graph == 'Pie Chart':  # need to be handled
-
+            if type_of_graph == 'Pie Chart':  # need to be handled as it can display one feature only.
                 st.warning("Please select only one parameter of feature to view this chart.")
 
             if type_of_graph == 'Donut Chart':
@@ -208,7 +210,7 @@ if a1 == 'Explore':
 
             type_of_graph = st.radio('Choose the type of graph to display : ', graphs_to_choose)
 
-            if type_of_graph == 'Pie Chart':  # need to be handled
+            if type_of_graph == 'Pie Chart': 
                 selected = selected_option2[0]
                 st.subheader(selected)
                 plost.pie_chart(
@@ -263,6 +265,8 @@ if a1 == 'Explore':
                     color='make',
                     height=500,
                     legend=None)
+                
+     #----2 feature - Dependency and Analysis------
 
     elif b1 == 'Dependency & Analysis':
         st.markdown(f"<h1 style='background-color:#F3F781;'> Dependency & Analysis </h1>",
@@ -281,7 +285,8 @@ if a1 == 'Explore':
         type_of_graph2 = st.selectbox("Select type of Chart :", ('Area Chart', 'Line Chart'))
 
         if y_axis_dependent != x_axis_dependent and len(y_axis_dependent) != 0:
-
+                
+            #displaying graphs
             if type_of_graph2 == 'Line Chart':
                 plost.line_chart(
                     dt,
@@ -300,8 +305,10 @@ if a1 == 'Explore':
                     stack=False)
 
         else:
-
+            #if all selected options removed/ no option selected
             st.warning("Choose atleast 1 option for analysis.")
+                
+    #---- 3 feature- Price Prediction------
 
     elif b1 == 'Price Prediction':
         st.markdown(f"<h1 style='background-color:#E2A9F3;'> Price Prediction </h1>",
@@ -311,11 +318,12 @@ if a1 == 'Explore':
                               'engine_size_cc', 'power2weight_ratio']
         get_linear_prediction(dt, options_to_choose2)
         get_svm_prediction(dt, options_to_choose2)
+        #loading the prediction models from the pickle files
         model = pickle.load(open('model.sav', 'rb'))
         model3 = pickle.load(open('model3.sav', 'rb'))
 
 
-        def user_report():
+        def user_report(): #for taking input of the values of features from the user
             width = st.number_input("Enter width of the car.", value=66.0, min_value=50.0, max_value=350.0, key=1,
                                     step=0.1)
             bore = st.number_input("Enter bore of the car.", key=2, step=0.1, value=3.0)
@@ -341,27 +349,34 @@ if a1 == 'Explore':
             report_data = pd.DataFrame(user_report_data, index=[0])
             return report_data
 
-
         user_data = user_report()
 
         selected_model = st.selectbox("Choose model", ('Linear Regression', 'SVM Regression'))
+        
+        #loading and predicting Linear Regression model, if selected
         if selected_model == 'Linear Regression':
             price_pred = model.predict(user_data)
             st.write("\n")
             st.subheader("The  predicted  price  of  the  car  is: ")
             st.subheader("Rs. " + str(np.round(price_pred[0], 2)))
-
+                
+        #loading and predicting SVM Regression model, if selected       
         if selected_model == 'SVM Regression':
             price_pred = model3.predict(user_data)
             st.write("\n")
             st.subheader("The  predicted  price  of  the  car  is: ")
             st.subheader("Rs. " + str(np.round(price_pred[0], 2)))
 
+    #----4 feature - Automobile News------
+
     elif b1 == 'Automobile News':
         st.markdown(f"<h1 style='background-color:#A9BCF5;'> Automobile News </h1>",
                     unsafe_allow_html=True)
-
+        
+        #calling the function in which news is extracted 
         get_news()
+
+    #----5 feature - Resolve Queries------
 
     elif b1 == 'Resolve Queries':
         st.markdown(f"<h1 style='background-color:#A9BCF5;'> Resolve Queries</h1>",
@@ -370,7 +385,8 @@ if a1 == 'Explore':
         selected_query = st.selectbox("Your query is related to",('Find cars with an input value of a feature',
                                                                   'Highest/Lowest values of features',
                                                                      'Segmentation & Grouping'))
-
+        
+        #1 query
         if selected_query == 'Find cars with an input value of a feature':
             selected_feature = st.selectbox("Choose an option", (
             'symboling', 'normalized_losses', 'wheel_base', 'engine_size', 'length', 'width', 'height', 'curb_weight',
@@ -380,7 +396,8 @@ if a1 == 'Explore':
 
             selected_car = st.number_input("Enter value ", key=1, step=0.1)
             selected_car = float(selected_car)
-
+        
+            #checking the conditions and printing the car names equal/more/less than the input value of specific feature of car
             if st.checkbox("Equal to input value"):
                 model_list = dt[dt[selected_feature] == selected_car].make
                 final_model_list = model_list.unique()
@@ -402,6 +419,7 @@ if a1 == 'Explore':
                 for i in final_model_list:
                     st.write(i.capitalize())
 
+        #2 query
         if selected_query == 'Highest/Lowest values of features':
             selected_feature = st.selectbox("Choose an option", (
                 'symboling', 'normalized_losses', 'wheel_base', 'engine_size', 'length', 'width', 'height',
@@ -426,7 +444,10 @@ if a1 == 'Explore':
             for i in final_min_model:
                 st.write(i.capitalize())
 
+        #3 query
         if selected_query == 'Segmentation & Grouping':
+            #creating 2 select menus to select 2 features for showing grouping
+        
             feature_for_segment = st.selectbox(
                 " Select the first feature to show grouping and segmentation: ", options_to_choose,
                 key=1)
@@ -436,6 +457,7 @@ if a1 == 'Explore':
                     'city_mpg': 24, 'highway_mpg': 25, 'num_doors': 28, 'num_cylinders': 29, 'engine_size_cc': 30,
                     'power2weight_ratio': 31}
             selected_segment = Dict[feature_for_segment]
+                
             res = list((Counter(options_to_choose) - Counter([feature_for_segment])).elements())
             feature_for_segment2 = st.selectbox(
                 " Select the second feature to show grouping and segmentation: ", res,
@@ -446,23 +468,29 @@ if a1 == 'Explore':
                      'city_mpg': 24, 'highway_mpg': 25, 'num_doors': 28, 'num_cylinders': 29, 'engine_size_cc': 30,
                      'power2weight_ratio': 31}
             selected_segment2 = Dict[feature_for_segment2]
+        
             if st.button("Get representation for these features "):
                 st.write(
                     "The customer segmentation graph given below shows the most popular " + feature_for_segment + " and " + feature_for_segment2 + " combination which are preferred by people.")
+                
+                #calling the function in which K Clustering algorithm is coded, and groups are formed and displayed
                 get_customer_seg(dt, selected_segment, selected_segment2)
                 st.write(
                     "Red , yellow and green dots depict 3 different groups, which show how the " + feature_for_segment + " and the " + feature_for_segment2 + " are available in different cars.")
 
 
+    #----6 feature - Web Scraping------
 
     elif b1 == 'Web Scraping':
-        
+        #calling the function where data is scraped from web
         get_web()
-
         st.markdown(f"<h1 style='background-color:#F3F781;'> Web Scraping </h1>",
                     unsafe_allow_html=True)
+        
+        #reading web extracted data from the excel file
         df = pd.read_excel('car_extracted_data.xlsx')
-
+        
+        #displaying the data and graph of the dataset
         st.subheader("Extracted data : ")
         st.write(df)
         plost.bar_chart(
@@ -475,12 +503,12 @@ if a1 == 'Explore':
             legend=None)
 
         car_options = df["Name"].unique().tolist()
-
         car_selected = st.selectbox("select the car to get details : ",car_options)
-
         car_rating = df[df['Name'] == car_selected].Rating
         car_price = df[df['Name'] == car_selected].Price
         car_mileage = df[df['Name'] == car_selected].Mileage
+        
+        #displaying the mileage,rating and price of selected car
 
         st.subheader("Mileage - " + car_mileage.values[0])
         st.subheader("Rating - " + str(car_rating.values[0]))
@@ -490,6 +518,8 @@ if a1 == 'Explore':
         st.subheader(star_rating)
         st.subheader("Price - " + str(car_price.values[0]))
         
+#------About section of navigation menu----
+
 if a1 == 'About':
     st.markdown(f"<h1 style='background-color:#F08080;'> ABOUT </h1>", unsafe_allow_html=True)
     st.markdown(f"<h3 style='background-color:#1974D2;'> Data Analysis : </h3>", unsafe_allow_html=True)
