@@ -3,6 +3,10 @@
 ## Data Analysis
 It is the process of systematically applying statistical and/or logical techniques to describe and illustrate, condense and recap, and evaluate data.
 
+## Dataset used 
+[https://github.com/jyoti-bhasin/Automobile_Analysis_Project_streamlit.app/blob/main/Book2.csv
+](url)
+
 ## Technologies used :
 ### Language 
 Python- for programming and writing logic.
@@ -23,16 +27,20 @@ Streamlit share.
 First of all,import all the required modules and libraries of python.
 Then, the csv file is loaded to obtain dataset.
 Since our file does not have a lot of null values, or severe issues, we will just replace extra space by null values in the dataset, and it will be ready to use.
-The basic design and menu options are created.
+The basic design and menu options are created. The navigation bar, home screen and about section details are added.
 
 ### 1- feature
 Next, in the visual representation option, a select menu is created for selecting features of cars, and to choose types of graphs. The different types of graphs such as bar, line, area, scatter, pie, donut chart are visualised using the plost library of streamlit.
+*Plost is a deceptively simple plotting library for Streamlit, used for depicting data in the form of beautiful charts and graphs*
 ### 2- feature
 For the Dependency and analysis, similar menu , along with few conditions are applied, and feature to select type of graph is created. Again, plost library of streamlit is used for visualization.
 ### 3- feature
 For the Price prediction feature, two models of Machine learning- Linear Regression and SVM Regression are made, and their pickle files are used in the app, for the prediction of price of cars, by taking input of features of the car.
+**Linear Regression**- *It is a Machine Learning is used to predict the value of a variable based on the value of another variable.*
+**SVM Regression**- *It is a supervised learning algorithm that is used to predict discrete values.*
 ### 4- feature 
 For the Automobile News generation, the news is shown on the app using the NewsAPI. It is extracted in a JSON format, hence converted to the readable text and all the details such as news headline, author, source, description, etc are displayed on the web page.
+NewsAPI link - [https://newsapi.org/docs/endpoints/everything](url)
 ### 5- feature
 Next, for the resolve queries section, three queries related to automobiles are chosen and a selection menu is created, to allow the user to choose a query to resolve. Specific logic is written, utilizing the dataset to solve these queries to display the maximum or minimum values of a car feature, etc. For the 'Grouping and Segmentation' query, K-Clustering Algorithm to form different groups which could depict best combinations of two features which most of the automobiles uses. A scatter graph is displayed to view these groups and segmentation.
 ### 6- feature
