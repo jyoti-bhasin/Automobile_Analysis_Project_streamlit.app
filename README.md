@@ -24,21 +24,21 @@ Streamlit share.
 
 ## Working of the app :
 ### Import libraries and dataset.
-First of all,import all the required modules and libraries of python.
-Then, the csv file is loaded to obtain dataset.
-Since our file does not have a lot of null values, or severe issues, we will just replace extra space by null values in the dataset, and it will be ready to use.
-The basic design and menu options are created. The navigation bar, home screen and about section details are added.
+- First of all,import all the required modules and libraries of python.
+- Then, the csv file is loaded to obtain dataset.
+- Since our file does not have a lot of null values, or severe issues, we will just replace extra space by null values in the dataset, and it will be ready to use.
+- The basic design and menu options are created. The navigation bar, home screen and about section details are added.
 
 ### 1- feature
 Next, in the visual representation option, a select menu is created for selecting features of cars, and to choose types of graphs. The different types of graphs such as bar, line, area, scatter, pie, donut chart are visualised using the plost library of streamlit.
-*Plost is a deceptively simple plotting library for Streamlit, used for depicting data in the form of beautiful charts and graphs*
+> *Plost is a deceptively simple plotting library for Streamlit, used for depicting data in the form of beautiful charts and graphs*
 ### 2- feature
 For the Dependency and analysis, similar menu , along with few conditions are applied, and feature to select type of graph is created. Again, plost library of streamlit is used for visualization.
 ### 3- feature
 For the Price prediction feature, two models of Machine learning- Linear Regression and SVM Regression are made, and their pickle files are used in the app, for the prediction of price of cars, by taking input of features of the car. These models are imported from sklearn library of Python.
-**Sklearn**- The sklearn library contains a lot of efficient tools for machine learning and statistical modeling including classification, regression, clustering and dimensionality reduction.
-**Linear Regression**- *It is a Machine Learning is used to predict the value of a variable based on the value of another variable.*
-**SVM Regression**- *It is a supervised learning algorithm that is used to predict discrete values.*
+> **Sklearn**- The sklearn library contains a lot of efficient tools for machine learning and statistical modeling including classification, regression, clustering and dimensionality reduction.
+> **Linear Regression**- *It is a Machine Learning is used to predict the value of a variable based on the value of another variable.*
+> **SVM Regression**- *It is a supervised learning algorithm that is used to predict discrete values.*
 ### 4- feature 
 For the Automobile News generation, the news is shown on the app using the NewsAPI. It is extracted in a JSON format, hence converted to the readable text and all the details such as news headline, author, source, description, etc are displayed on the web page.
 > NewsAPI link - [https://newsapi.org/docs/endpoints/everything](url)
