@@ -32,10 +32,10 @@ Streamlit share.
 ### Adding functionality : 1- feature
 - Next, for the visual representation feature, a select menu is created for selecting features of cars, and to choose types of graphs. 
 - The different types of graphs such as bar, line, area, scatter, pie, donut chart are visualised using the plost library of streamlit.
-> **Plost**- *is a deceptively simple plotting library for Streamlit, used for depicting data in the form of beautiful charts and graphs.*
+> - **Plost**- *is a deceptively simple plotting library for Streamlit, used for depicting data in the form of beautiful charts and graphs.*
 - The dataset data is worked on and processed by several computations using the NumPy and Pandas library of Python.
-> -**NumPy** - *It is  a Python package used for performing the various numerical computations and processing of the multidimensional and single-dimensional array elements.*
-> -**Pandas**- *It is an open source Python package that is used for data science/data analysis and machine learning tasks.*
+> - **NumPy**- *It is  a Python package used for performing the various numerical computations and processing of the multidimensional and single-dimensional array elements.*
+> - **Pandas**- *It is an open source Python package that is used for data science/data analysis and machine learning tasks.*
 ### 2- feature
 - For the Dependency and analysis, similar menu , along with few conditions are applied, and feature to select type of graph is created. 
 - Again, plost library of streamlit is used for visualization.
@@ -66,6 +66,9 @@ After all the code is written, it is deployed on Streamlit framework, with a few
  
 ### UI/UX
 Although Streamlit provides a decent UI/UX design, some custom CSS is added in the code to improve the look of the app, and give some colours and design to the headings and text.
+
+### Hosting 
+After all the code is ready and the app is all deployed, it is hosted on streamlit share.
 
 ## Functionality & features :
 ### 1. Visual Representation :
