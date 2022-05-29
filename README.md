@@ -57,7 +57,12 @@ Streamlit share.
 - The data from a cars website is extracted, and all important details such as mileage, dealer name, rating, review count and price of few cars is stored in an excel sheet. 
 - Now, data from this file is displayed on the app, along with a graph between rating and name of car. Besides, a selection menu is created for the user to choose a car, and the details related to that specific car will be displayed.
 
+### Deployment
+After all the code is written, it is deployed on Streamlit framework, with a few changes to the code for errorfree deployment.
+> **Streamlit** - *It is an open source app framework in Python language, which helps us create beautiful web apps for data science and machine learning.*
+ 
 ### UI/UX
+Although Streamlit provides a decent UI/UX design, some custom CSS is added in the code to improve the look of the app, and give some colours and design to the headings and text.
 
 ## Functionality & features :
 ### 1. Visual Representation :
@@ -80,3 +85,7 @@ News extracted using the NewsAPI can be shown here.You can search a keyword rela
 
 ### 6. Web Scraping :
 You can access and analyse data such as car name, mileage, rating, price etc , from an online car website, by scraping data from web. Also, you can view the graph of rating of various cars, and get details of a specific car model.
+
+## Application of Data Analysis in Automobile Industry
+In automobile industry, analyzed data is used to improve the customer experience, where data grouping and segmentation can lead to more effective marketing and improved customer engagement , more targeted one‑to‑one offers and can help the automobile industry to correctly manage the features and price of cars. 
+The analyzed data can be used for changing the auto business, support mechanization, and boost automation.
