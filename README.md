@@ -1,7 +1,7 @@
 # Automobile Data Analysis :
 
 ## Data Analysis
-It is the process of systematically applying statistical and/or logical techniques to describe and illustrate, condense and recap, and evaluate data.
+- It is the process of systematically applying statistical and/or logical techniques to describe and illustrate, condense and recap, and evaluate data.
 
 ## Dataset used 
 [https://github.com/jyoti-bhasin/Automobile_Analysis_Project_streamlit.app/blob/main/Book2.csv
@@ -9,18 +9,18 @@ It is the process of systematically applying statistical and/or logical techniqu
 
 ## Technologies used :
 ### Language 
-Python- for programming and writing logic.
-CSS - for adding some UI/UX.
+- *Python*- for programming and writing logic.
+- *CSS* - for adding some UI/UX.
 ### Python libraries 
-api, beautifulsoup4, matplotlib, numpy, pandas, pickle_mixin, plotly, requests, scikit_learn.
+- api, beautifulsoup4, matplotlib, numpy, pandas, pickle_mixin, plotly, requests, scikit_learn.
 ### Algorithms 
-Machine Learning Algorithms such as Linear Regression and SVM Regression.
+- Machine Learning Algorithms such as Linear Regression and SVM Regression.
 ### APIs
-NewsAPI
+- NewsAPI.
 ### Framework for deployment
-Streamlit.
+- Streamlit.
 ### Hosted on 
-Streamlit share.
+- Streamlit share.
 
 ## Working of the app :
 ### Import libraries and dataset.
@@ -61,14 +61,14 @@ Streamlit share.
 - Now, data from this file is displayed on the app, along with a graph between rating and name of car. Besides, a selection menu is created for the user to choose a car, and the details related to that specific car will be displayed.
 
 ### Deployment
-After all the code is written, it is deployed on Streamlit framework, with a few changes to the code for errorfree deployment.
+- After all the code is written, it is deployed on Streamlit framework, with a few changes to the code for errorfree deployment.
 > **Streamlit** - *It is an open source app framework in Python language, which helps us create beautiful web apps for data science and machine learning.*
  
 ### UI/UX
-Although Streamlit provides a decent UI/UX design, some custom CSS is added in the code to improve the look of the app, and give some colours and design to the headings and text.
+- Although Streamlit provides a decent UI/UX design, some custom CSS is added in the code to improve the look of the app, and give some colours and design to the headings and text.
 
 ### Hosting 
-After all the code is ready and the app is all deployed, it is hosted on streamlit share.
+- After all the code is ready and the app is all deployed, it is hosted on streamlit share.
 
 ## Functionality & features :
 ### 1. Visual Representation :
