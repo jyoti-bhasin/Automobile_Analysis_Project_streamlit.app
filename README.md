@@ -7,6 +7,10 @@
 [https://github.com/jyoti-bhasin/Automobile_Analysis_Project_streamlit.app/blob/main/Book2.csv
 ](url)
 
+## Important instructions
+**python version should be *3.7*
+BeautifulSoup library version to be installed should be- *BeautifulSoup4***
+
 ## Technologies used :
 ### Language 
 - *Python*- for programming and writing logic.
