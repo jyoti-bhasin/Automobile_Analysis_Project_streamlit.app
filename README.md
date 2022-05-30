@@ -8,8 +8,8 @@
 ](url)
 
 ## Important instructions
-**python version should be *3.7*
-BeautifulSoup library version to be installed should be- *BeautifulSoup4***
+- **python version should be *3.7*
+- BeautifulSoup library version to be installed should be- *BeautifulSoup4***
 
 ## Technologies used :
 ### Language 
