@@ -110,6 +110,3 @@ You can resolve various queries related to automobiles such as-
 ## Application of Data Analysis in Automobile Industry
 - In automobile industry, analyzed data is used to improve the customer experience, where data grouping and segmentation can lead to more *effective marketing and improved customer engagement , more targeted one‑to‑one offers* and can help the automobile industry to correctly manage the features and price of cars. 
 -The analyzed data can be used for changing the **auto business, support mechanization, and boost automation.**
-
-## Web app link 
-[share.streamlit.io/jyoti-bhasin/automobile_analysis_project_streamlit.app/main/app.py](url)
