@@ -112,4 +112,4 @@ You can resolve various queries related to automobiles such as-
 -The analyzed data can be used for changing the **auto business, support mechanization, and boost automation.**
 
 ## Web app link 
-[https://share.streamlit.io/jyoti-bhasin/automobile_analysis_project_streamlit.app/main/app.py](url)
+[share.streamlit.io/jyoti-bhasin/automobile_analysis_project_streamlit.app/main/app.py](url)
